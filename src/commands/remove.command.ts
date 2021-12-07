@@ -7,12 +7,6 @@ import { Task } from "../interfaces/task.interface";
  * @returns The stack with the specified Task removed
  */
 export function removeTaskFromStack(taskId: number, stack: Task[]): Task[] {
-  if (stack.length <= 1 || !stack.some(task => task.id === taskId)) {
-    return stack.map((task, index) => {
-      return { ...task, id: index };
-    });
-  }
-
   return stack
     .filter(task => task.id !== taskId)
     .map((task, index) => {
