@@ -21,7 +21,7 @@ describe('remove.command.ts', () => {
       expect(actual).not.toContain(TASK_TO_REMOVE);
     });
 
-    it('should return the same stack - nonexistent ID', () => {
+    it('should return the same  and update IDs', () => {
       const ID_TO_FIND = 4;
 
       const STACK: Task[] = [
@@ -30,9 +30,24 @@ describe('remove.command.ts', () => {
         { name: 'An other task', id: 35, state: TaskState.BLANK }
       ];
 
+      const expected: Task[] = [
+        { name: 'Some task', id: 0, state: TaskState.TBD },
+        { name: 'Some other task', id: 1, state: TaskState.DONE },
+        { name: 'An other task', id: 2, state: TaskState.BLANK }
+      ];
+
       const actual = removeTaskFromStack(ID_TO_FIND, STACK);
 
-      expect(actual).toBe(STACK);
+      expect(actual).toStrictEqual(expected);
+    });
+
+    it('should return the same stack (for empty array)', () => {
+      const STACK: Task[] = [];
+
+      const actual = removeTaskFromStack(1, STACK);
+      const expected: Task[] = [];
+
+      expect(actual).toStrictEqual(expected);
     });
   })
 });
