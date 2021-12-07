@@ -1,10 +1,10 @@
-import { newTaskFromLine } from '../../src/commands/add.command';
-import { TaskState } from '../../src/enum/task-state.enum';
+import { newTaskFromLine } from '../../src/services/add.service';
+import { TaskState } from '../../src/enums/task-state.enum';
 import { Task } from '../../src/interfaces/task.interface';
 
-describe('add.command.ts', () => {
+describe('add.service.ts', () => {
   describe('newTaskFromLine()', () => {
-    it('should correctly read a command and return a Task', () => {
+    it('should correctly return a Task', () => {
       const CURATED_LINE_TO_TEST = 'Manger';
 
       const actual = newTaskFromLine(CURATED_LINE_TO_TEST, 0);

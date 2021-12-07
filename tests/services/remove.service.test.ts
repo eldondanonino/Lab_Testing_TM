@@ -1,8 +1,8 @@
-import { removeTaskFromStack } from "../../src/commands/remove.command";
-import { TaskState } from "../../src/enum/task-state.enum";
+import { removeTaskFromStack } from "../../src/services/remove.service";
+import { TaskState } from "../../src/enums/task-state.enum";
 import { Task } from "../../src/interfaces/task.interface";
 
-describe('remove.command.ts', () => {
+describe('remove.service.ts', () => {
   describe('removeTaskFromStack()', () => {
     it('should remove the given task from the stack', () => {
       const TASK_TO_REMOVE: Task = {

@@ -1,4 +1,4 @@
-import { TaskState } from "../enum/task-state.enum";
+import { TaskState } from "../enums/task-state.enum";
 import { Task } from "../interfaces/task.interface";
 
 /**

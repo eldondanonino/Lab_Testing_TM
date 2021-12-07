@@ -1,8 +1,8 @@
-import { updateTaskState } from "../../src/commands/set-state.command";
-import { TaskState } from "../../src/enum/task-state.enum";
+import { updateTaskState } from "../../src/services/set-state.service";
+import { TaskState } from "../../src/enums/task-state.enum";
 import { Task } from "../../src/interfaces/task.interface";
 
-describe('set-state.command.ts', () => {
+describe('set-state.service.ts', () => {
   describe('updateTaskState()', () => {
     it('should correctly update a task\'s state', () => {
       const STACK: Task[] = [
